@@ -100,3 +100,37 @@ function products(arr) {
 }
 
 console.log(products([1, 3, 9, 4]));
+
+const input = 
+  [[1,0,1,1,0],
+    [0,1,1,1,0],
+    [1,1,1,1,1],
+    [1,0,1,1,1],
+    [1,1,1,1,1]];
+
+function zeros(array) {
+  const columns = [];
+  const rows = [];
+
+  for (let i=0; i<array.length; i++) { //itterate rows
+    if (array[i].includes(0)) rows.push(i);
+  }
+  for (let num in rows) {
+    for (let j = 0; j < array[num].length; j++) {
+      if (array[num][j] === 0 && !columns.includes(0)) {
+        columns.push(j);
+      } 
+    }
+  }
+
+  for (let y = 0; y < array.length; y++) {
+    for (let x = 0; x < array[y].length; x++) {
+      if (columns.includes(x) || rows.includes(y)) {
+        array[y][x] = 0;
+      }
+    }
+  }
+
+  return array;
+}
+console.log(zeros(input));
