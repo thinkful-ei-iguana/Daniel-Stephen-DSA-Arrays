@@ -90,3 +90,13 @@ function remChar(str, toRemove) {
   return newStr;
 }
 remChar('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou');
+
+//10
+
+function products(arr) {
+  let prod = arr.reduce((prod, num) => prod *= num, 1);
+  const newArr = arr.map(num => prod / num);
+  return newArr;
+}
+
+console.log(products([1, 3, 9, 4]));
