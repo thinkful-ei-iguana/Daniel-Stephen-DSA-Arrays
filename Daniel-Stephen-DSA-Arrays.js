@@ -63,3 +63,5 @@ class Array {
     this.length--;
   }
 }
+
+module.exports = Array;
