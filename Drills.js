@@ -47,3 +47,36 @@ function lessThan5(arr) {
   return arr;
 }
 console.log(lessThan5([12, 11, 10, 7, 3,2,1, 11]));
+
+//7
+
+function maxSum(arr) {
+  let max = arr[0];
+  for (let i = 1; i <= arr.length; i++) {
+    for (let j = 0; j < arr.length - i; j++) {
+      const sum = arr.slice(j, i + j).reduce((sum, num) => sum += num);
+      if(sum > max) {
+        max = sum;
+      }
+    } 
+  }
+  return max;
+}
+
+console.log(maxSum([4, 6, -3, 5, -2, 1]));
+
+//8
+
+function merge(arr1, arr2) {
+  const newArr = [];
+  while (arr1.length && arr2.length) {
+    if(arr1.length === 0 || arr1[0] > arr2[0]) {
+      newArr.push(arr2.shift());
+    } else {
+      newArr.push(arr1.shift());
+    }
+  }
+  return newArr;
+}
+
+console.log(merge([1, 3, 6, 8, 11], [2, 3, 5, 8, 9]));
