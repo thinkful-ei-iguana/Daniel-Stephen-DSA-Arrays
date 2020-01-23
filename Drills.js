@@ -35,3 +35,15 @@ function URLify(str) {
 
 console.log(URLify('tauhida parveen'));
 console.log(URLify('www.thinkful.com /tauh ida parv een'));
+
+//6
+
+function lessThan5(arr) {
+  const length = arr.length;
+  for (let i = 0; i < length; i++) {
+    const item = arr.shift();
+    if (item >= 5) arr.push(item);
+  }
+  return arr;
+}
+console.log(lessThan5([12, 11, 10, 7, 3,2,1, 11]));
