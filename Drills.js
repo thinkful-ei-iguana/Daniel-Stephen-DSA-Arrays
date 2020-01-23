@@ -25,3 +25,13 @@ no2();
 // 3.1 b) The address stays the same for the pop method but the length of the array is decreased. The data is still there but no longer being referenced by the array methods.
 // 4.1) memory is configured to only store numbers
 // 4.2) Resize increases capacity when the array runs out of allocated space, copying the array to a new location
+
+//5
+
+function URLify(str) {
+  const URL = str.split(' ').join('%20');
+  return URL;
+}
+
+console.log(URLify('tauhida parveen'));
+console.log(URLify('www.thinkful.com /tauh ida parv een'));
